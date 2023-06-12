@@ -1,5 +1,3 @@
-import cprint as cprint
-
 from config import *
 from utils import *
 from web3_checker import *
@@ -59,7 +57,7 @@ if __name__ == "__main__":
 
     MODULE = int(MODULE)
     if other_arguments:
-        MODULE = int(other_arguments)
+        MODULE = int(other_arguments[0])
 
     if MODULE in [1, 2]:
         start_module(MODULE)
@@ -93,4 +91,4 @@ if __name__ == "__main__":
             except Exception as error:
                 logger.error()
 
-    
+        
