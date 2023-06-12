@@ -1,7 +1,19 @@
+import cprint as cprint
+
 from config import *
 from utils import *
 from web3_checker import *
 from debank import *
+import sys
+
+# Get the command-line arguments
+arguments = sys.argv
+
+# The first argument (index 0) is the script filename
+script_name = arguments[0]
+
+# The remaining arguments are the command-line arguments passed to the script
+other_arguments = arguments[1:]
 
 def start_module(module, key=''):
 
@@ -44,7 +56,10 @@ if __name__ == "__main__":
     cprint(RUN_TEXT, RUN_COLOR)
     cprint(f'\nsubscribe to us : https://t.me/hodlmodeth\n', RUN_COLOR)
 
+
     MODULE = int(MODULE)
+    if other_arguments:
+        MODULE = int(other_arguments)
 
     if MODULE in [1, 2]:
         start_module(MODULE)
@@ -78,4 +93,4 @@ if __name__ == "__main__":
             except Exception as error:
                 logger.error()
 
-        
+    
